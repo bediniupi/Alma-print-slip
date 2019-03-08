@@ -59,8 +59,6 @@ if (mm < 10) {
 
 today = mm + '/' + dd + '/' + yyyy;
 
-var meta_charset = "<meta charset=\\'UTF-8\\';>";
-
 var header_html ="<html><head><style>body {font-family: Arial, Helvetica, sans-serif;} table {border-collapse: collapse;} </style></head><body>"; 
 
 var title = "Loan Slip";
