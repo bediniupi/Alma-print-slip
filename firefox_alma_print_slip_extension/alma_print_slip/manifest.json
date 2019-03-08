@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+  "name": "Alma Print Slip",
+  "version": "0.9.3",
+  "version name": "0.9.3 beta",
+  "author": "Nazzareno Bedini - Università di Pisa",
+  "description": "Print a loan slip directly in Alma.",
+  "icons": {
+    "48": "icons/alma-48.png",
+    "96": "icons/alma-96.png"
+  },
+  "permissions": [
+    "activeTab",
+    "*://*.alma.exlibrisgroup.com/*",
+    "webRequest"    
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "browser_action": {
+  "browser_style": true,
+  "default_icon": {
+    "48": "icons/alma-48.png",
+    "96": "icons/alma-96.png"
+   },
+    "default_title": "Alma Print Slip"    
+  },
+    
+"content_scripts": [
+    {
+      "matches": ["*://*.alma.exlibrisgroup.com/*"],
+      "js": ["alma_print_slip.js"]
+    }
+  ]
+  
+}
