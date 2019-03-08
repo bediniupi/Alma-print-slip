@@ -63,7 +63,7 @@ var meta_charset = "<meta charset=\\'UTF-8\\';>";
 
 var header_html ="<html><head><style>body {font-family: Arial, Helvetica, sans-serif;} table {border-collapse: collapse;} </style></head><body>"; 
 
-var button_name = "Print Slip":
+var button_name = "Print Slip";
 
 var title = "Loan Slip";
 
@@ -76,7 +76,7 @@ var firma = "Signature _________________________";
 var html_slip = header_html+"<h4>"+institution+"<br />"+library+"</h4><h3>"+title+"</h3><h4>"+user_name+" ("+user_id+")</h4>"+loan_list_table+"<h2>&nbsp;</h2><p>"+data+"&nbsp;&nbsp;&nbsp;&nbsp;"+firma+"</p></body></html>";
 
 var call_javascript = "var slip = window.open('', '_blank','toolbar=no,scrollbars=no,resizable=yes,titlebar=no,menubar=no,top=300,left=500,width=500,height=600'); slip.document.write('"+html_slip+"'); slip.print(); slip.close();";
-var print_button = " <button id=\"alma_print_slip\" onclick=\""+call_javascript+"\" style=\"background-color:red; color:white; height: 32px; padding: 6px 12px 6px 12px; border: 1px solid transparent; border-radius:4px\"> <strong>"+button_name"</strong> </button>"; 
+var print_button = " <button id=\"alma_print_slip\" onclick=\""+call_javascript+"\" style=\"background-color:red; color:white; height: 32px; padding: 6px 12px 6px 12px; border: 1px solid transparent; border-radius:4px\"> <strong>"+button_name+"</strong> </button>"; 
 
 var button_div = document.getElementById('PAGE_BUTTONS_checkoutpatronworkspacedone');
 button_div.insertAdjacentHTML('afterend', print_button);
