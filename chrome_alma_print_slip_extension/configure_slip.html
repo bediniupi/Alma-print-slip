@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+  </head>
+
+  <body>
+<h1>Configurazione di Alma Print Slip</h1>
+<div id="updated" style="display:none; color:red; font-weight:bold;">Configurazione Aggiornata</div></p>
+<p>Per ripristinare i valori di default basta cancellare il contenuto della casella relativa.</p>
+    <form>
+       <fieldset><legend><strong>General</strong></legend>
+        <p><label>Button name: </label><input type="text" id="button_name" ></p>
+        <p><label>Button aspect (CSS): </label><input type="text" id="button_css" size=100 ></p>
+        <p><label>Print immediately: </label><input type="checkbox" id="print_now" checked="true" ></p>
+        </fieldset>
+        <p>&nbsp;</p>
+        <fieldset><legend><strong>Receipt Labels</strong></legend>
+        <p><label>Slip title </label><input type="text" id="slip_name" ></p>
+        <p><label>Intitution name: </label><input type="text" id="institution_name" ></p>
+        <p><label>Institution logo url: </label><input type="text" id="institution_logo" size=100 ></p>
+        <p><label>Signature text: </label><input type="text" id="signature" size=70 ></p>
+        <p><label>Date localization (IETF BCP 47): </label><input type="text" id="date_format" size=10></p>
+        </fieldset>
+        <p>&nbsp;</p>
+        <fieldset><legend><strong>Receipt appearance: CSS</strong></legend>
+        <p><label>General (body): </label><input type="text" id="body_css" size=100 ></p>
+        <p><label>Loans table: </label><input type="text" id="table_css" size=100 ></p>
+        <p><label>Institution: </label><input type="text" id="institution_css" size=100 ></p>
+        <p><label>Library: </label><input type="text" id="library_css" size=100 ></p>
+        <p><label>Slip title: </label><input type="text" id="title_css" size=100 ></p>
+        <p><label>User: </label><input type="text" id="user_css" size=100 ></p>
+        <p><label>Loans list: </label><input type="text" id="loans_css" size=100 ></p>
+        <p><label>Signature: </label><input type="text" id="signature_css" size=100 ></p>
+        </fieldset>
+        <p><button type="submit">Save the Configuration</button></p>
+        
+    </form>
+
+    <script src="configure_slip.js"></script>
+
+  </body>
+
+</html> 

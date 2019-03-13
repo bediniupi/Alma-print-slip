@@ -4,4 +4,9 @@ function call_alma_print_slip() {
  });
 }
 
+function open_options_page() {
+    chrome.runtime.openOptionsPage();
+    }
+
 chrome.webRequest.onCompleted.addListener(call_alma_print_slip, {urls: ["*://*.alma.exlibrisgroup.com/*"]});
+chrome.browserAction.onClicked.addListener(open_options_page);
