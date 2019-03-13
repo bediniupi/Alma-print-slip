@@ -20,8 +20,8 @@
   },
   "browser_action": {
   "default_icon": {
-    "48": "icons/alma-48.png",
-    "96": "icons/alma-96.png"
+    "48": "icons/alma_slip-48.png",
+    "96": "icons/alma_slip-96.png"
    },
     "default_title": "Alma Print Slip"    
   },
