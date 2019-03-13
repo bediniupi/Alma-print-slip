@@ -34,3 +34,7 @@ In general use your css knowlewdge to personalize the aspect of the receipts: in
 
 After installation you have to save the configuration even if you don't change it, or the button will be "undefined".
 Sometimes the loan table of the first receipt you display to print may contain a row with "sorted"/"Sortable" text.
+
+## Mozilla Addons
+
+The Alma Slip Print extension for University of Pisa in Italian language is available also in the Mozilla Addons Site: [https://addons.mozilla.org/addon/alma-print-slip-unipi/](https://addons.mozilla.org/addon/alma-print-slip-unipi/)
