@@ -18,7 +18,7 @@
                 var button_style = item.button_css;
                 var institution_name = item.institution_name;
                 var institution_logo_link = item.institution_logo;
-                var data = "Data "+today;
+                var data = "Date "+today;
                 var firma = item.signature;
                 var print_now = item.print_now;
                 
