@@ -30,7 +30,7 @@ if (loan_table) {
               var loan_text = loan_cells.item(j);
               var header = loan_text.getElementsByClassName("sort fontReg");
               if (header.length > 0) {
-                 var loan_text = header[0];
+                 var loan_text = header[0].value;
                  } else {
                  var loan_text =  loan_cells.item(j).innerText;            
                  }
