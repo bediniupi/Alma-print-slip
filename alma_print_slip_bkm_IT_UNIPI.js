@@ -64,7 +64,7 @@ if (loan_table) {
     var html_slip = document.getElementById('alma_slip_hidden').innerHTML; 
     var slip = window.open('', '_blank','toolbar=no,resizable=yes,titlebar=no,menubar=no,top=300,left=500,width=500,height=600'); 
     slip.document.write(html_slip); 
-    slip.document.close();
     slip.print(); 
+    slip.document.close();
     slip.close();
  }
