@@ -4,7 +4,7 @@ if (loan_table) {
     var institution_name = "Università di Pisa";
     var institution_logo_link = "https://sbart-unipi.alma.exlibrisgroup.com/infra/branding/logo/logo-email.png?institution=3298&amp;version=1552293706210?version=March2019";
     var body_css = "font-family: Arial, Helvetica, sans-serif;";
-    var table_css = "border-collapse: collapse;";
+    var table_css = "display: table-row-group !important; border-collapse: collapse;";
     var institution_css = "order: 0; font-size: medium;";
     var library_css = "order: 1; font-size: medium;";
     var title_css = "order: 2; font-size: large;";
@@ -65,6 +65,6 @@ if (loan_table) {
     var slip = window.open('', '_blank','toolbar=no,resizable=yes,titlebar=no,menubar=no,top=300,left=500,width=500,height=600'); 
     slip.document.write(html_slip); 
     slip.document.close();
-    //slip.print(); 
-    //slip.close();
+    slip.print(); 
+    slip.close();
  }
