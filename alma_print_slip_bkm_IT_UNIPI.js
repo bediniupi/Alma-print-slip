@@ -21,7 +21,6 @@ if (loan_table) {
     var library = document.getElementById("locationText").innerHTML;    
     var rowLength = loan_table.rows.length;
     var loan_list = "";
-
     for (var i = 0; i < rowLength; i++) {
          var loan_cells = loan_table.rows.item(i).cells;
          var cellLength = loan_cells.length;
@@ -44,14 +43,12 @@ if (loan_table) {
             }
           loan_list += "\n";
           }
-
     var loan_list_table = loan_list.replace(/\|\|/g, "</td><td>");
     loan_list_table = loan_list_table.replace(/\|\n/g, "</td></tr>");
     loan_list_table = loan_list_table.replace(/\|/g, "<tr><td>");
     loan_list_table = loan_list_table.replace(/CET/g, "");
     loan_list_table = loan_list_table.replace(/\n/g, "");
     loan_list_table = "<table border=1>" + loan_list_table + "</table>";
-            
     var css_style = "body {"+body_css+"} table {"+table_css+"} #slip_institution {"+institution_css+"} #slip_library {"+library_css+"} #slip_title {"+title_css+"} #slip_user {"+user_css+"} #slip_loans_table {"+loans_css+"} #slip_signature {"+signature_css+"}";
     var header_html ="<!DOCTYPE HTML><html><head><meta charset='UTF-8'><style>"+css_style+"</style></head><body><div id='slip'>"; 
     var html_slip = "<div id='slip_institution'><div id='slip_logo'><img src='"+institution_logo_link+"'/></div>"+institution_name+"</div><div id='slip_library'>"+library+"</div><div id='slip_title'>"+slip_name+"</div><div id='slip_user'>"+user_name+" ("+user_id+")</div><div id='slip_loans_table'>"+loan_list_table+"</div><div id='slip_signature'>"+date_slip+"&nbsp;&nbsp;&nbsp;&nbsp;"+signature+"</div></div>";
@@ -60,11 +57,10 @@ if (loan_table) {
     html_div.style.display = "none";
     html_div.innerHTML = html_slip;
     loan_table.appendChild(html_div);
-      
     html_slip = document.getElementById('alma_slip_hidden').innerHTML; 
     var slip = window.open('', '_blank','toolbar=no,resizable=yes,titlebar=no,menubar=no,top=300,left=500,width=500,height=600'); 
     slip.document.write(header_html+html_slip+'</body></html>'); 
     slip.document.close();
-    //slip.print(); 
-    //slip.close();
+    slip.print(); 
+    slip.close();
  }
