@@ -54,17 +54,17 @@ if (loan_table) {
             
     var css_style = "body {"+body_css+"} table {"+table_css+"} #slip_flex { display: flex; flex-direction: column;} #slip_institution {"+institution_css+"} #slip_library {"+library_css+"} #slip_title {"+title_css+"} #slip_user {"+user_css+"} #slip_loans_table {"+loans_css+"} #slip_signature {"+signature_css+"}";
     var header_html ="<html><head><meta charset='UTF-8';><style>"+css_style+"</style></head><body><div id='slip_flex'>"; 
-    var html_slip = header_html+"<div id='slip_institution'><div id='slip_logo'><img src='"+institution_logo_link+"'/></div>"+institution_name+"</div><div id='slip_library'>"+library+"</div><div id='slip_title'>"+slip_name+"</div><div id='slip_user'>"+user_name+" ("+user_id+")</div><div id='slip_loans_table'>"+loan_list_table+"</div><div id='slip_signature'>"+date_slip+"&nbsp;&nbsp;&nbsp;&nbsp;"+signature+"</div></div></body></html>";
+    var html_slip = "<div id='slip_institution'><div id='slip_logo'><img src='"+institution_logo_link+"'/></div>"+institution_name+"</div><div id='slip_library'>"+library+"</div><div id='slip_title'>"+slip_name+"</div><div id='slip_user'>"+user_name+" ("+user_id+")</div><div id='slip_loans_table'>"+loan_list_table+"</div><div id='slip_signature'>"+date_slip+"&nbsp;&nbsp;&nbsp;&nbsp;"+signature+"</div></div>";
     var html_div = document.createElement('div');
     html_div.id = "alma_slip_hidden";
     html_div.style.display = "none";
     html_div.innerHTML = html_slip;
     loan_table.appendChild(html_div);
       
-    var html_slip = document.getElementById('alma_slip_hidden').innerHTML; 
+    html_slip = document.getElementById('alma_slip_hidden').innerHTML; 
     var slip = window.open('', '_blank','toolbar=no,resizable=yes,titlebar=no,menubar=no,top=300,left=500,width=500,height=600'); 
-    slip.document.write(html_slip); 
+    slip.document.write(header_html+html_slip+'</body></html>'); 
     slip.document.close();
-    slip.print(); 
-    slip.close();
+    //slip.print(); 
+    //slip.close();
  }
