@@ -1,3 +1,8 @@
+## New version as bookmarklet is available ##
+
+check at [Alma-Print-slip-bookmarklet](https://github.com/bediniupi/Alma-Print-slip-bookmarklet)
+(no more need to install extensions)
+
 # Alma-print-slip
 
 Alma-Print Slip browser extensions
