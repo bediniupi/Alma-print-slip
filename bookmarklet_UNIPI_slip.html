@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="it-IT">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Alma-print-slip | Alma-Print Slip bookmarklet UNIPI</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Alma-print-slip-bookmarklet-UNIPI" />
+<meta property="og:locale" content="it_IT" />
+<meta name="description" content="Alma-Print Slip bookmarklet UNIPI" />
+<meta property="og:description" content="Alma-Print Slip browser extensions" />
+<link rel="canonical" href="https://bediniupi.github.io/Alma-print-slip/" />
+<meta property="og:url" content="https://bediniupi.github.io/Alma-print-slip/" />
+<meta property="og:site_name" content="Alma-print-slip" />
+<script type="application/ld+json">
+{"@type":"WebSite","url":"https://bediniupi.github.io/Alma-print-slip/","headline":"Alma-print-slip","name":"Alma-print-slip","description":"Alma-Print Slip bookmarklet","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/Alma-print-slip/assets/css/style.css?v=bb6d9f495ed0ffbd2cc55683a9cf19de540876b9">
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+                <img src="https://avatars3.githubusercontent.com/u/33749413?s=460&v=4">  
+        <h1>Nazzareno Bedini</h1>
+        <h2><a href="http://www.sba.unipi.it/">Sistema Bibliotecario di Ateneo - Universit&agrave di Pisa</a></h2>
+        <p>Sorgenti su <a href="https://github.com/bediniupi/Alma-print-slip">GitHub</a></p>
+      </header>
+      <section>
+<h1>Alma Print Slip bookmarklet per UNIPI: versione per stampanti termiche</h1>
+
+<p>Per utilizzare il bottone di stampa ricevute in Alma trascinare il link sottostante nella barra dei preferiti:</p>
+
+<h2><img src="https://raw.githubusercontent.com/bediniupi/Alma-print-slip/master/firefox_alma_print_slip_extension/icons/alma_slip-48.png"><a href="javascript:(function()%7Bvar%20_lt%20%3D%20document.getElementById(%22TABLE_DATA_loanList%22)%3Bif%20(_lt)%20%7Bvar%20_sln%20%3D%20%22Ricevuta%20di%20Prestito%22%2C_isn%20%3D%20%22Universit%C3%A0%20di%20Pisa%22%2C_ilu%20%3D%20%22https%3A%2F%2Fsbart-unipi.alma.exlibrisgroup.com%2Finfra%2Fbranding%2Flogo%2Flogo-email.png%3Finstitution%3D3298%26amp%3Bversion%3D1569479069537%3Fversion%3DSeptember2019%22%2C_bcs%20%3D%20%22font-family%3A%20Arial%2C%20Helvetica%2C%20sans-serif%3B%22%2C_tbcs%20%3D%20%22border%3A1px%20solid%20black%3B%20border-collapse%3A%20collapse%3B%20font-size%3A%20small%3B%22%2C_gcs%20%3D%20%22width%3A100px%3B%22%3B_ics%20%3D%20%22font-size%3A%20medium%3B%22%2C_lbcs%20%3D%20%22font-size%3A%20medium%3B%22%2C_tcs%20%3D%20%22padding-top%3A10px%3B%20font-size%3A%20large%3B%22%2C_ucs%20%3D%20%22font-size%3A%20small%3B%20font-weight%3Abold%3B%22%2C_lcs%20%3D%20%22padding-top%3A%2020px%3B%22%2C_scs%20%3D%20%22padding-top%3A50px%3B%22%2C_df%20%3D%20%22it-IT%22%2C_sn%20%3D%20%22%3Cbr%20%2F%3E%3Cbr%20%2F%3EFirma%20________________%20%3Cbr%20%2F%3E%22%2C_ll%20%3D%20%22%22%3Bvar%20d%20%3D%20new%20Date()%3Bvar%20_td%20%3D%20d.toLocaleDateString(_df)%3Bvar%20_ds%20%3D%20%22Data%20%22%2B_td%3Bvar%20_un%20%3D%20document.getElementById(%22pageBeanfullPatronName%22).innerHTML%3Bvar%20_ud%20%3D%20document.getElementById(%22pageBeanuserIDisplay%22).value%3Bvar%20_lb%20%3D%20document.getElementById(%22locationText%22).innerHTML%3Bvar%20_rl%20%3D%20_lt.rows.length%3Bvar%20_noa%20%3D%20true%3Bvar%20_twc%20%3D%20true%3Bvar%20header_ray%20%3D%20%5B%5D%3Bvar%20loan_ray%20%3D%20%5B%5D%3Bvar%20i%2Cj%3Bvar%20h%2Cl%3Bvar%20loan_row%2C%20loan_rows%3Bvar%20_llt%3Bvar%20header_el%20%3D%20document.querySelectorAll('th%5Bid%5E%3D%22SELENIUM_ID_loanList_HEADER%22%5D')%3Bfor(i%3D0%3B%20i%3Cheader_el.length%3B%20i%2B%2B)%20%7Bh%20%3D%20header_el%5Bi%5D.innerText%3Bif%20(!h%20%7C%7C%20h%3D%3D%22sortable%22%20%7C%7C%20h%3D%3D%22ordinabile%22%20)%20h%3Dheader_el%5Bi%5D.querySelector('input%5Bid%5E%3D%22sortHeader-checkout.patron.workspace%22%5D').value%3Bheader_ray.push(h)%3B%7Dloan_rows%20%3D%20document.querySelectorAll('tr%5Bid%5E%3D%22recordContainerloanList%22%5D')%3Bfor%20(j%3D0%3B%20j%3Cloan_rows.length%3B%20j%2B%2B)%20%7Bl%20%3D%20loan_rows%5Bj%5D.innerText%3Bif(_noa)%20l%3Dl.replace(%2F%5Cs%5C%2F%5Cs.*%3F(%3F%3D%5Ct)%2F%2C%20%22%22)%3Bloan_ray.push(l.split('%5Ct'))%3B%7Dif%20(!_twc)%20%7B_llt%3D'%3Ctable%20border%20class%3D%22_llt%22%3E'%3B_llt%2B%3D%22%3Ctr%3E%3Cth%3E%22%20%2B%20header_ray.join(%22%3C%2Fth%3E%3Cth%3E%22)%20%2B%20%22%3C%2Fth%3E%3C%2Ftr%3E%5Cn%22%3Bfor%20(i%3D0%3B%20i%3Cloan_ray.length%3B%20i%2B%2B)%20%7Bfor(j%3D0%3B%20j%3Cheader_ray.length%3B%20j%2B%2B)%20%7Bloan_row%2B%3Dloan_ray%5Bi%5D%5Bj%2B2%5D%2B%22%3C%2Ftd%3E%3Ctd%3E%22%3B%7D_llt%2B%3D%22%3Ctr%3E%3Ctd%3E%22%20%2B%20loan_row.substring(0%2C%20loan_row.length-4)%20%2B%20%22%3C%2Ftr%3E%5Cn%22%3Bloan_row%3D%22%22%3B%7D_llt%2B%3D%22%3C%2Ftable%3E%22%3B%7D%20else%20%7Bfor%20(i%3D0%3B%20i%3Cloan_ray.length%3B%20i%2B%2B)%20%7B_llt%2B%3D'%3Ctable%20class%3D%22_llt%22%3E'%3Bfor%20(j%3D0%3B%20j%3Cheader_ray.length%3B%20j%2B%2B)%20%7B_llt%2B%3D%22%3Ctr%3E%3Cth%3E%22%2Bheader_ray%5Bj%5D%2B%22%3C%2Fth%3E%3Ctd%3E%22%2Bloan_ray%5Bi%5D%5Bj%2B2%5D%2B%22%3C%2Ftd%3E%3C%2Ftr%3E%5Cn%22%3B%7D_llt%2B%3D%22%3C%2Ftable%3E%5Cn%22%3B%7D%7D_llt%3D_llt.replace(%22undefined%22%2C%20%22%22)%3Bvar%20_css%20%3D%20%22body%20%7B%22%2B_bcs%2B%22%7D%20table%2C%20th%2C%20td%20%7B%22%2B_tbcs%2B%22%7D%20%23slip_institution%20%7B%22%2B_ics%2B%22%7D%20%23slip_logo%20img%20%7B%22%2B_gcs%2B%22%7D%20%23slip_lb%20%7B%22%2B_lbcs%2B%22%7D%20%23slip_title%20%7B%22%2B_tcs%2B%22%7D%20%23slip_user%20%7B%22%2B_ucs%2B%22%7D%20%23slip_loans_table%20%7B%22%2B_tcs%2B%22%7D%20%23slip_sn%20%7B%22%2B_scs%2B%22%7D%22%3Bvar%20_hh%20%3D%22%3C!DOCTYPE%20HTML%3E%3Chtml%3E%3Chead%3E%3Cmeta%20charset%3D'UTF-8'%3E%3Cstyle%3E%22%2B_css%2B%22%3C%2Fstyle%3E%3C%2Fhead%3E%3Cbody%3E%3Cdiv%20id%3D'slip'%3E%22%3Bvar%20_hsl%20%3D%20%22%3Cdiv%20id%3D'slip_logo'%3E%3Cimg%20src%3D'https%3A%2F%2Fsbart-unipi.alma.exlibrisgroup.com%
+2Finfra%2Fbranding%2Flogo%2Flogo-email.png%3Finstitution%3D3298%26amp%3Bversion%3D1569479069537%3Fversion%3DSeptember2019'%2F%3E%3C%2Fdiv%3E%3Cdiv%20id%3D'slip_institution'%3EUniversit%C3%A0%20di%20Pisa%3C%2Fdiv%3E%3Cdiv%20id%3D'slip_lb'%3E%22%2B_lb%2B%22%3C%2Fdiv%3E%3Cdiv%20id%3D'slip_title'%3ERicevuta%20di%20Prestito%3C%2Fdiv%3E%3Cdiv%20id%3D'slip_user'%3E%22%2B_un%2B%22%20(%22%2B_ud%2B%22)%3C%2Fdiv%3E%3Cdiv%20id%3D'slip_loans_table'%3E%22%2B_llt%2B%22%3C%2Fdiv%3E%3Cdiv%20id%3D'slip_sn'%3E%22%2B_ds%2B%22%20%3Cbr%20%2F%3E%3Cbr%20%2F%3EFirma%20________________%20%3Cbr%20%2F%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%22%3Bvar%20_sp%20%3D%20window.open(''%2C%20'_blank'%2C'toolbar%3Dno%2Cresizable%3Dyes%2Ctitlebar%3Dno%2Cmenubar%3Dno%2Ctop%3D300%2Cleft%3D500%2Cwidth%3D500%2Cheight%3D600')%3B_sp.document.write(_hh%2B_hsl%2B'%3C%2Fbody%3E%3C%2Fhtml%3E')%3B_sp.document.close()%3B_sp.print()%3B%20_sp.close()%3B%7D%7D)()">AlmaStampaRICEVUTA</a>
+    </h2>
+        <p>Dalla pagina dei servizi dell'utente in Alma con i prestiti visualizzati cliccare sul link "AlmaStampaRICEVUTA" nella barra ogni volta che si vuole stampare la ricevuta.</p>
+        <p>Nota: al primo utilizzo può comparire un avviso di popup bloccato, in tal caso consentire nelle impostazioni i popup per il sito di Alma.</p>
+        <h2>Istruzioni di configurazione per stampante termica EPSON TM-T20II</h2>
+        <p>Istruzioni per Firefox</p>
+        <ul>
+        <li>In file/impostazioni pagina seleziona Tab Formato e opzioni</li>
+        <li>Setta orientamento verticale</li>
+        <li>Adatta alla larghezza del foglio</li>
+        <li>Ora seleziona tab Margini e intestazione e piè di pagina</li>
+        <li>Setta tutti i margini a zero</li>
+        <li>Mettere --vuoto-- a tutte le intestazioni e piè di pagina</li>
+        <p>Configurazione della stampante</p>
+        <ul><li>Dalla finestra di stampa vai su preferenze/Layout/Avanzate e seleziona il formato della carta su: <strong>Rollpapaper 80x297 mm</strong></li></ul>
+        </section>
+    </div>
+        </body>
+</html> 
