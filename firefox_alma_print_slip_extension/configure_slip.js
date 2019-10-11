@@ -16,7 +16,10 @@ function saveOptions(e) {
     signature_css: document.querySelector("#signature_css").value,
     date_format: document.querySelector("#date_format").value,
     signature: document.querySelector("#signature").value,
-    print_now: document.querySelector("#print_now").checked
+    print_now: document.querySelector("#print_now").checked,
+    table_rotate: document.querySelector("#table_rotate").checked,
+    only_title: document.querySelector("#only_title").checked,
+    sortable_translated: document.querySelector("#sortable_translated").value
   });
     
     if (sessionStorage.getItem("is_reloaded")) {
@@ -49,7 +52,11 @@ function restoreOptions() {
     document.querySelector("#date_format").value = result.date_format || "en-US";
     document.querySelector("#signature").value = result.signature || "Signature _________________________";
     document.querySelector("#print_now").checked = result.print_now;
+    document.querySelector("#table_rotate").checked = result.table_rotate;
+    document.querySelector("#only_title").checked = result.only_title;
+    document.querySelector("#sortable_translated").value = result.sortable_translated || "";
 }
+
 
   function onError(error) {
     console.log(`Error: ${error}`);

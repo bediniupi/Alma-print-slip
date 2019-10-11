@@ -2,8 +2,7 @@
         console.log(`Error: ${error}`);
         }
     function onGot(item) {
-               
-            
+                           
                 var body_css = item.body_css;
                 var table_css = item.table_css;
                 // div   
@@ -24,12 +23,58 @@
                 var data = "Date "+today;
                 var firma = item.signature;
                 var print_now = item.print_now;
-                
-                var css_style = "body {"+body_css+"} table {"+table_css+"} #slip_flex { display: flex; flex-direction: column;} #slip_institution {"+institution_css+"} #slip_library {"+library_css+"} #slip_title {"+title_css+"} #slip_user {"+user_css+"} #slip_loans_table {"+loans_css+"} #slip_signature {"+signature_css+"}";
+                var table_rotate = item.table_rotate;
+                var only_title = item.only_title;
+                var sortable_translated = item.sortable_translated;
+                var user_name = document.getElementById("pageBeanfullPatronName").innerHTML;    
+                var user_id = document.getElementById("pageBeanuserIDisplay").value;    
+                var library = document.getElementById("locationText").innerHTML;  
+                var rowLength = loan_table.rows.length;
+                var header_ray = [];
+                var loan_ray = [];
+                var i,j;
+                var h,l;
+                var loan_row, loan_rows;
+                var loan_list_table;
+                var header_el = document.querySelectorAll('th[id^="SELENIUM_ID_loanList_HEADER"]');
+                for(i=0; i<header_el.length; i++) {
+                    h = header_el[i].innerText;
+                    if (!h || h=="sortable" || h==sortable_translated) h = header_el[i].querySelector('input[id^="sortHeader-checkout.patron.workspace"]').value;  
+                    header_ray.push(h);
+                }
+                loan_rows = document.querySelectorAll('tr[id^="recordContainerloanList"]');
+                for (j=0; j<loan_rows.length; j++) {
+                    l = loan_rows[j].innerText;
+                    if(only_title) l=l.replace(/\s\/\s.*?(?=\t)/, "");
+                    loan_ray.push(l.split('\t'));
+                }
+                if (!table_rotate) {    
+                    loan_list_table='<table border=1>';
+                    loan_list_table+="<tr><th>" + header_ray.join("</th><th>") + "</th></tr>\n";
+                for (i=0; i<loan_ray.length; i++) {
+                    for(j=0; j<header_ray.length; j++) {
+                        loan_row+=loan_ray[i][j+2]+"</td><td>";
+                        }            
+                    loan_list_table+="<tr><td>" + loan_row.substring(0, loan_row.length-4) + "</tr>\n";
+                    loan_row="";
+                    }                    
+                loan_list_table+="</table>";    
+                } else {
+                    for (i=0; i<loan_ray.length; i++) {
+                        loan_list_table+='<table border=1>';
+                        for (j=0; j<header_ray.length; j++) {
+                            loan_list_table+="<tr><th>"+header_ray[j]+"</th><td>"+loan_ray[i][j+2]+"</td></tr>\n";
+                        }
+                    loan_list_table+="</table>\n";
+                    }
+                }
+                loan_list_table=loan_list_table.replace("undefined", "");
+                    
+                var css_style = "body {"+body_css+"} table {"+table_css+"} #slip_flex { display: flex; flex-direction: column;} #slip_institution {"+institution_css+"} #slip_library {"+library_css+"} #slip_title {"+title_css+"} #slip_user {"+user_css+"} #slip_loan_list_table {"+loans_css+"} #slip_signature {"+signature_css+"}";
 
                 var header_html ="<html><head><meta charset='UTF-8';><style>"+css_style+"</style></head><body><div id='slip_flex'>"; 
 
-                var html_slip = header_html+"<div id='slip_institution'><div id='slip_logo'><img src='"+institution_logo_link+"'/></div>"+institution_name+"</div><div id='slip_library'>"+library+"</div><div id='slip_title'>"+slip_name+"</div><div id='slip_user'>"+user_name+" ("+user_id+")</div><div id='slip_loans_table'>"+loan_list_table+"</div><div id='slip_signature'>"+data+"&nbsp;&nbsp;&nbsp;&nbsp;"+firma+"</div></div></body></html>";
+                var html_slip = header_html+"<div id='slip_institution'><div id='slip_logo'><img src='"+institution_logo_link+"'/></div>"+institution_name+"</div><div id='slip_library'>"+library+"</div><div id='slip_title'>"+slip_name+"</div><div id='slip_user'>"+user_name+" ("+user_id+")</div><div id='slip_loan_list_table'>"+loan_list_table+"</div><div id='slip_signature'>"+data+"&nbsp;&nbsp;&nbsp;&nbsp;"+firma+"</div></div></body></html>";
                 var button_exists = document.getElementById("alma_print_slip");
                 if (!button_exists) {
                 var html_div = document.createElement('div');
@@ -54,44 +99,7 @@
   
 var loan_table = document.getElementById("TABLE_DATA_loanList");
 if (loan_table) {
-    var user_name = document.getElementById("pageBeanfullPatronName").innerHTML;    
-            var user_id = document.getElementById("pageBeanuserIDisplay").value;    
-            var library = document.getElementById("locationText").innerHTML;    
-            var rowLength = loan_table.rows.length;
-            var loan_list = "";
-
-            for (var i = 0; i < rowLength; i++) {
-            var loan_cells = loan_table.rows.item(i).cells;
-            var cellLength = loan_cells.length;
-            for (var j = 1; j < cellLength; j++) {
-                    if (i == 0) {     
-                    var loan_text = loan_cells.item(j);
-                    var header = loan_text.getElementsByClassName("sort fontReg");
-                    if (header.length > 0) {
-                        var loan_text = header[0].value;
-                        } else {
-                        var loan_text =  loan_cells.item(j).innerText;            
-                        }
-                    } else {
-                    var loan_text = loan_cells.item(j).innerText;
-                    }
-                    if (loan_text.length > 0) {
-                        loan_list += "|" + loan_text + "|";
-                    }
-                    
-                }
-                    
-                loan_list += "\n";
-                }
-
-            var loan_list_table = loan_list.replace(/\|\|/g, "</td><td>");
-            loan_list_table = loan_list_table.replace(/\|\n/g, "</td></tr>");
-            loan_list_table = loan_list_table.replace(/\|/g, "<tr><td>");
-            loan_list_table = loan_list_table.replace(/CET/g, "");
-            loan_list_table = loan_list_table.replace(/\n/g, "");
-            loan_list_table = "<table border=1>" + loan_list_table + "</table>";
-
-
+            
             var res = browser.storage.local.get(null);
             res.then(onGot, onError);    
  

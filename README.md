@@ -15,7 +15,7 @@ Add a "Print Slip" button in the fulfillment Patron services Alma page when loan
 
 ## Installation
 
-Firefox: go to about:addons and install the extension from the alma_print_slip-0.9.9-fx_EN.xpi file.
+Firefox: go to about:addons and install the extension from the alma_print_slip-1.0-fx_EN.xpi file.
 
 Chrome: go to chrome://extensions, activate developer mode, and then load non packaged extension from the chrome Alma Print Slip extension directory saved locally.
 
@@ -30,17 +30,16 @@ If you do not want to display some data (for example, the signature part) simply
 
 To reorder the elements swap the "order n" part of css.
 
-Remember that the data displayed in loans table are the same and in the same order of the datas displayed in the table you visualize in the fulfillment Patron services Alma page.
+Remember that the data displayed in loans table are the same and in the same order of the datas displayed in the table you visualize in the fulfillment Patron services Alma page: if you want to avoid displaying the author/s simply check "Only title" in configuration page.
+
+If you use a receipt printer you can check "Two column table" to get a tighter table to print.
 
 You can add a image adding its url: for example, you can add the Alma email logo from Configuration Branding management adding the url https://[...].alma.exlibrisgroup.com/infra/branding/logo/logo-email.png?[...].
+
+If you use Alma in another languange than english please fill the "Sortable translation" field with the word translated in your language (for example, in italian is "ordinabile") to avoid printing it in the loan table. 
 
 In general use your css knowlewdge to personalize the aspect of the receipts: in case you messed it up, reset the values to the default values simply delete the content of the textbox.
 
 ## Troubleshooting
 
 After installation you have to save the configuration even if you don't change it, or the button will be "undefined".
-
-Sometimes the loan table of the first receipt you display to print may contain a row with "sorted"/"Sortable" text.
-
-
-
