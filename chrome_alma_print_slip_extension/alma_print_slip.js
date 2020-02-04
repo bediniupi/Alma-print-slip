@@ -23,7 +23,7 @@
                 var print_now = item.print_now;
                 var table_rotate = item.table_rotate;
                 var only_title = item.only_title;
-                var sortable_translated = item.sortable_translated;
+                var sortable_translated = "|sortable|sorted descending|sorted ascending|"+item.sortable_translated+"|";
                 var user_name = document.getElementById("pageBeanfullPatronName").innerHTML;    
                 var user_id = document.getElementById("pageBeanuserIDisplay").value;    
                 var library = document.getElementById("locationText").innerHTML;  
@@ -37,7 +37,7 @@
                 var header_el = document.querySelectorAll('th[id^="SELENIUM_ID_loanList_HEADER"]');
                 for(i=0; i<header_el.length; i++) {
                     h = header_el[i].innerText;
-                    if (!h || h=="sortable" || h==sortable_translated) h = header_el[i].querySelector('input[id^="sortHeader-checkout.patron.workspace"]').value;  
+                    if (!h || sortable_translated.indexOf("|"+h+"|") !== -1) h = header_el[i].querySelector('input[id^="sortHeader-checkout.patron.workspace"]').value;  
                     header_ray.push(h);
                 }
                 loan_rows = document.querySelectorAll('tr[id^="recordContainerloanList"]');
@@ -72,7 +72,7 @@
 
                 var header_html ="<html><head><meta charset='UTF-8';><style>"+css_style+"</style></head><body><div id='slip_flex'>"; 
 
-                var html_slip = header_html+"<div id='slip_institution'><div id='slip_logo'><img src='"+institution_logo_link+"'/></div>"+institution_name+"</div><div id='slip_library'>"+library+"</div><div id='slip_title'>"+slip_name+"</div><div id='slip_user'>"+user_name+" ("+user_id+")</div><div id='slip_loans_table'>"+loan_list_table+"</div><div id='slip_signature'>"+data+"&nbsp;&nbsp;&nbsp;&nbsp;"+firma+"</div></div></body></html>";
+                var html_slip = header_html+"<div id='slip_institution'><div id='slip_logo'><img src='"+institution_logo_link+"'/></div>"+institution_name+"</div><div id='slip_library'>"+library+"</div><div id='slip_title'>"+slip_name+"</div><div id='slip_user'>"+user_name+"<span id='user_id'> ("+user_id+")</span></div><div id='slip_loans_table'>"+loan_list_table+"</div><div id='slip_signature'>"+data+"&nbsp;&nbsp;&nbsp;&nbsp;"+firma+"</div></div></body></html>";
                 var button_exists = document.getElementById("alma_print_slip");
                 if (!button_exists) {
                 var html_div = document.createElement('div');

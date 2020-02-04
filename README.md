@@ -36,7 +36,7 @@ If you use a receipt printer you can check "Two column table" to get a tighter t
 
 You can add a image adding its url: for example, you can add the Alma email logo from Configuration Branding management adding the url https://[...].alma.exlibrisgroup.com/infra/branding/logo/logo-email.png?[...].
 
-If you use Alma in another languange than english please fill the "Sortable translation" field with the word translated in your language (for example, in italian is "ordinabile") to avoid printing it in the loan table. 
+If you use Alma in another languange than english please fill the "Sortable translation" field with the word translated in your language (for example, in italian is "ordinabile") to avoid printing it in the loan table; separate each term with pipe "|" (ex., "ordinabile|ordine ascendente").
 
 In general use your css knowlewdge to personalize the aspect of the receipts: in case you messed it up, reset the values to the default values simply delete the content of the textbox.
 

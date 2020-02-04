@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Alma Print Slip",
-  "version": "1.0",
+  "version": "1.1",
   "author": "Nazzareno Bedini - Università di Pisa",
   "description": "Create a button to print loans slip immediately in Alma ExLibris.",
   "homepage_url": "https://github.com/bediniupi/Alma-print-slip",
