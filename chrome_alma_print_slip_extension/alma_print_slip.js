@@ -26,7 +26,7 @@
                 var sortable_translated = "|sortable|sorted descending|sorted ascending|"+item.sortable_translated+"|";
                 var user_name = document.getElementById("pageBeanfullPatronName").innerHTML;    
                 var user_id = document.getElementById("pageBeanuserIDisplay").value;    
-                var library = document.getElementById("locationText").innerHTML;  
+                var library = document.getElementById("locationButton").innerText;  
                 var rowLength = loan_table.rows.length;
                 var header_ray = [];
                 var loan_ray = [];

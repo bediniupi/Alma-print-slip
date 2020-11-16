@@ -15,7 +15,7 @@ Add a "Print Slip" button in the fulfillment Patron services Alma page when loan
 
 ## Installation
 
-Firefox: go to about:addons and install the extension from the alma_print_slip-1.0-fx_EN.xpi file.
+Firefox: go to about:addons and install the extension from the alma_print_slip-1.2-fx.xpi file.
 
 Chrome: go to chrome://extensions, activate developer mode, and then load non packaged extension from the chrome Alma Print Slip extension directory saved locally.
 
